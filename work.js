@@ -21,9 +21,9 @@ function render_restaurants(n) {
   var restaurantsList = document.getElementById("restaurantsList")
   n.forEach(function(a) {
     if (a.online == false) {
-      restaurantsList.insertAdjacentHTML('beforeend', "<div class='grid-item offline'><div class=item-title><p class=font-weight-bold>" + a.name + "</div>" + "<img src=" + a.image + "><div class= details-container><div class=description> " + a.description + "</div><a  target='_blank' rel='noopener noreferrer' class='btn btn-dark' href=http://www.google.com/maps/place/"+a.location[1]+","+a.location[0]+">Find on Map</a></div></p></div>");
+      restaurantsList.insertAdjacentHTML('beforeend', "<div class='grid-item offline'><div class=item-title><p class=font-weight-bold>" + a.name + "</div>" + "<img src=" + a.image + "><div class= details-container><div class=description> " + a.description + "</div><p></p><a  target='_blank' rel='noopener noreferrer' class='btn btn-dark' href=http://www.google.com/maps/place/"+a.location[1]+","+a.location[0]+">Find on Map</a></div></p></div>");
     } else {
-      restaurantsList.insertAdjacentHTML('beforeend', "<div class='grid-item' id=restaurantRow><div class=item-title><p class=font-weight-bold>" + a.name + "</div>" + "<img src=" + a.image + "><div class= details-container><div class=description> " + a.description + "</div><a  target='_blank' rel='noopener noreferrer' class='btn btn-dark' href=http://www.google.com/maps/place/"+a.location[1]+","+a.location[0]+">Find on Map</a></div></p></div>")
+      restaurantsList.insertAdjacentHTML('beforeend', "<div class='grid-item' id=restaurantRow><div class=item-title><p class=font-weight-bold>" + a.name + "</div>" + "<img src=" + a.image + "><div class= details-container><div class=description> " + a.description + "</div><p></p><a  target='_blank' rel='noopener noreferrer' class='btn btn-dark' href=http://www.google.com/maps/place/"+a.location[1]+","+a.location[0]+">Find on Map</a></div></p></div>")
     }
   })
 }
