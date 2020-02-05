@@ -1,0 +1,15 @@
+body {
+  background: #F9F9FA;
+}
+
+img {
+  width: 100%;
+  max-width: 270px;
+  height: 188px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 300px);
+  grid-auto-flow: dense;
+}
