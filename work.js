@@ -1,5 +1,5 @@
 /* JSON loaded from github */
-var url = "https://raw.githubusercontent.com/woltapp/summer2020/766bea0e54a33f815bb03cf08468d407e674351b/restaurants.json";
+var url = "https://raw.githubusercontent.com/Xinacris/summer2020_Wolt/master/restaurants.json";
 var all_restaurants = [];
 /* this tells the page to wait until jQuery has loaded, so you can use the Ajax call */
 $(document).ready(function() {
