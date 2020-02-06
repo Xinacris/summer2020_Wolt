@@ -17,18 +17,18 @@ $(document).ready(function() {
   })
 })
 
-function render_restaurants(n) {
+function render_restaurants(restaurants) {
   var restaurantsList = document.getElementById("restaurantsList")
-  n.forEach(function(a) {
+  restaurants.forEach(function(a) {
     if (a.online == false) {
-      restaurantsList.insertAdjacentHTML('beforeend', "<div class='grid-item offline'><div class=item-title><p class=font-weight-bold>" + a.name + "</div>" + "<img src=" + a.image + "><div class= details-container><div class=description> " + a.description + "</div><p></p><a  target='_blank' rel='noopener noreferrer' class='btn btn-dark' href=http://www.google.com/maps/place/"+a.location[1]+","+a.location[0]+">Find on Map</a></div></p></div>");
+      restaurantsList.insertAdjacentHTML('beforeend', "<div class='grid-item offline'><div class=item-title><p class=font-weight-bold>" + a.name + "</div>" + "<img src=" + a.image + "><div class= details-container><div class=description> " + a.description + "</div><p></p><a  target='_blank' rel='noopener noreferrer' class='btn btn-dark' href=http://www.google.com/maps/place/" + a.location[1] + "," + a.location[0] + ">Find on Map</a></div></p></div>");
     } else {
-      restaurantsList.insertAdjacentHTML('beforeend', "<div class='grid-item' id=restaurantRow><div class=item-title><p class=font-weight-bold>" + a.name + "</div>" + "<img src=" + a.image + "><div class= details-container><div class=description> " + a.description + "</div><p></p><a  target='_blank' rel='noopener noreferrer' class='btn btn-dark' href=http://www.google.com/maps/place/"+a.location[1]+","+a.location[0]+">Find on Map</a></div></p></div>")
+      restaurantsList.insertAdjacentHTML('beforeend', "<div class='grid-item' id=restaurantRow><div class=item-title><p class=font-weight-bold>" + a.name + "</div>" + "<img src=" + a.image + "><div class= details-container><div class=description> " + a.description + "</div><p></p><a  target='_blank' rel='noopener noreferrer' class='btn btn-dark' href=http://www.google.com/maps/place/" + a.location[1] + "," + a.location[0] + ">Find on Map</a></div></p></div>")
     }
   })
 }
 
-function sortHide(n) {
+function sortHide(n) { //n is a switch that determines which button is clicked, 0 is for sorting, 1 is for hiding.
   var rows, x, y, shouldSwitch, dir, switchcount = 0;
   rows = document.getElementsByClassName("grid-item");
   var sort = document.getElementById("sortButton");
@@ -78,7 +78,7 @@ function sortHide(n) {
       }
     }
   } else if (n == 1) {
-    var elements = document.getElementsByClassName("offline");//getting offline restaurants data.
+    var elements = document.getElementsByClassName("offline"); //getting offline restaurants data.
     Array.prototype.forEach.call(elements, function(element) {
       if (element.style.display == '') {
         hideButton.innerHTML = 'All Restaurants';
